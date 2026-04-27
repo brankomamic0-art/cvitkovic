@@ -10,6 +10,9 @@ const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const siteDir = join(__dirname, "Cvitkovic");
 
+const RESEND_KEY = process.env.RESEND_API_KEY || process.env.RESEND_KEY;
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "jurej2750@gmail.com";
+const FROM_EMAIL = process.env.FROM_EMAIL || "Fizio Cvitković <noreply@mamicwebdesign.com>";
 const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH;
 const BLOG_STORAGE_ROOT = process.env.RAILWAY_VOLUME_MOUNT_PATH || "";
 const BLOG_DATA_DIR = process.env.BLOG_DATA_DIR || (BLOG_STORAGE_ROOT ? join(BLOG_STORAGE_ROOT, "data") : join(__dirname, "data"));
@@ -37,6 +40,16 @@ const normalizeTags = (tags) => {
     .map((tag) => tag.trim())
     .filter(Boolean);
 };
+
+const escapeHtml = (value = "") =>
+  String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+const requiredText = (value) => typeof value === "string" && value.trim().length > 0;
 
 const writePosts = async (posts) => {
   await mkdir(BLOG_DATA_DIR, { recursive: true });
@@ -120,6 +133,65 @@ app.post("/api/admin-logout", requireAdmin, (req, res) => {
   if (token) adminSessions.delete(token);
   res.setHeader("Set-Cookie", sessionCookie("", 0));
   res.json({ ok: true });
+});
+
+app.post("/api/send-email", async (req, res) => {
+  if (!RESEND_KEY) {
+    console.error("Missing RESEND_API_KEY environment variable");
+    return res.status(500).json({ error: "Email servis nije konfiguriran." });
+  }
+
+  const { ime, telefon, email, usluga, poruka, gotcha } = req.body || {};
+
+  if (gotcha) return res.json({ ok: true });
+  if (!requiredText(ime) || !requiredText(telefon) || !requiredText(email) || !requiredText(poruka)) {
+    return res.status(400).json({ error: "Ime, telefon, e-mail i poruka su obavezni." });
+  }
+
+  const safeName = escapeHtml(ime.trim());
+  const safePhone = escapeHtml(telefon.trim());
+  const safeEmail = escapeHtml(email.trim());
+  const safeService = escapeHtml(String(usluga || "Nije odabrano").trim() || "Nije odabrano");
+  const safeMessage = escapeHtml(poruka.trim()).replaceAll("\n", "<br>");
+
+  const payload = {
+    from: FROM_EMAIL,
+    to: [CONTACT_EMAIL],
+    subject: `Novi upit od ${ime.trim()} - Fizio Cvitković`,
+    html: `
+      <h2 style="color:#0b3b4a">Novi upit s web stranice - Fizio Cvitković</h2>
+      <table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;color:#111">
+        <tr><td style="padding:8px 12px;font-weight:bold;background:#f5f5f5">Ime i prezime</td><td style="padding:8px 12px">${safeName}</td></tr>
+        <tr><td style="padding:8px 12px;font-weight:bold;background:#f5f5f5">Telefon</td><td style="padding:8px 12px">${safePhone}</td></tr>
+        <tr><td style="padding:8px 12px;font-weight:bold;background:#f5f5f5">E-mail</td><td style="padding:8px 12px">${safeEmail}</td></tr>
+        <tr><td style="padding:8px 12px;font-weight:bold;background:#f5f5f5">Usluga</td><td style="padding:8px 12px">${safeService}</td></tr>
+        <tr><td style="padding:8px 12px;font-weight:bold;background:#f5f5f5;vertical-align:top">Poruka</td><td style="padding:8px 12px">${safeMessage}</td></tr>
+      </table>
+    `,
+    reply_to: email.trim()
+  };
+
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${RESEND_KEY}`
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error("Resend error:", error);
+      return res.status(500).json({ error: "Greška pri slanju upita." });
+    }
+
+    res.json({ ok: true });
+  } catch (error) {
+    console.error("Resend error:", error);
+    res.status(500).json({ error: "Greška pri slanju upita." });
+  }
 });
 
 app.get("/api/blog-posts", async (req, res) => {
