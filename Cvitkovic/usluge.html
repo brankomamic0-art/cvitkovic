@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usluge – Fizio Cvitković | Fizioterapija Split</title>
+  <meta name="description" content="Manualna terapija, Tecar (Wintecare), DNS, rehabilitacija sportskih ozljeda, Kinesio Taping, postoperativna rehabilitacija i funkcionalni trening u Splitu.">
+  <link rel="canonical" href="https://fiziocvitkovic.hr/usluge">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .service-full {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .service-full:last-child { border-bottom: none; }
+    .service-full.reverse { direction: rtl; }
+    .service-full.reverse > * { direction: ltr; }
+    .service-full-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4/3;
+    }
+    .service-full-body {}
+    .service-full-body h2 { margin: 12px 0 16px; }
+    .service-full-body p { color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-size:.925rem; }
+    .service-benefits {
+      margin: 20px 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .service-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .875rem;
+      color: var(--text);
+    }
+    .service-benefit-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .service-benefit-dot svg { color: var(--accent); }
+    @media (max-width: 780px) {
+      .service-full, .service-full.reverse { grid-template-columns: 1fr; direction: ltr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+
+<!-- ── PAGE HERO ──────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Navigacijska putanja">
+      <a href="index.html">Početna</a>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>Usluge</span>
+    </nav>
+    <div class="section-label">Što nudimo</div>
+    <h1>Naše <span class="text-primary">usluge</span></h1>
+    <p class="lead">Suvremene fizioterapijske metode prilagođene vašim potrebama — od akutnih ozljeda do kronične boli i sportske rehabilitacije.</p>
+  </div>
+</section>
+
+<!-- ── SERVICES LIST ──────────────────────────────── -->
+<section class="section">
+  <div class="container">
+
+    <!-- 1. Manualna terapija -->
+    <div class="service-full reveal" id="manualna-terapija">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg><span style="font-size:.68rem;opacity:.55">manualna terapija</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Terapija</span>
+        <h2>Manualna terapija</h2>
+        <p>Manualna terapija uključuje specifične tehnike rukama kojima se liječe disfunkcije zglobova, mišića i mekih tkiva. Posebno je učinkovita za bolove u leđima, vratu, ramenima i koljenima.</p>
+        <p>Koriste se tehnike mobilizacije zglobova, mekotkivnih tehnika (miofascijalno oslobađanje), tehnika istezanja i neuralne mobilizacije.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brzo smanjenje boli u zglobovima i mišićima</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Poboljšanje pokretljivosti i funkcije</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Bez lijekova i invazivnih zahvata</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Primjenjivo za akutne i kronične tegobe</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+    <!-- 2. Tecar terapija -->
+    <div class="service-full reverse reveal" id="tecar-terapija">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span style="font-size:.68rem;opacity:.55">Wintecare Tecar uređaj</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Elektroterapija</span>
+        <h2>Tecar terapija (Wintecare)</h2>
+        <p>Tecar terapija koristi radiofrekvencijsku energiju za duboko zagrijavanje tkiva, čime se ubrzava metabolizam stanica, poboljšava cirkulacija i smanjuje upala. Koristimo najsuvremeniji Wintecare uređaj.</p>
+        <p>Izrazito učinkovita za kronične bolove, tendinopatije, artroze i sportske ozljede. Rezultati su vidljivi već nakon prvih tretmana.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Ubrzana regeneracija tkiva</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Smanjenje kronične upale</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Bezbolno i ugodno za pacijenta</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brzi, dugotrajni rezultati</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+    <!-- 3. Sportske ozljede -->
+    <div class="service-full reveal" id="sportske-ozljede">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span style="font-size:.68rem;opacity:.55">sportska rehabilitacija</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Sport</span>
+        <h2>Liječenje sportskih ozljeda</h2>
+        <p>Specijalizirani program rehabilitacije za sportaše svih razina — od rekreativaca do profesionalaca. Brz povratak na sport uz minimalan rizik ponovne ozljede.</p>
+        <p>Tretiramo nategnuća mišića i ligamenata, ozljede koljena (ACL, meniskus), ozljede ramena, Ahilove tetive, plantarni fasciitis i sve ostale sportske ozljede.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brz i siguran povratak u sport</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Program prevencije ponovnih ozljeda</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Suradnja s trenerima i liječnicima</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Individualizirani protokol oporavka</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+    <!-- 4. Postoperativna rehabilitacija -->
+    <div class="service-full reverse reveal" id="postop-rehabilitacija">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><path d="M12 2a5 5 0 0 1 5 5c0 2.5-1.5 4.5-3.5 5.5V20a1.5 1.5 0 0 1-3 0v-7.5C8.5 11.5 7 9.5 7 7a5 5 0 0 1 5-5z"/><line x1="9" y1="14" x2="15" y2="14"/></svg><span style="font-size:.68rem;opacity:.55">postoperativna rehabilitacija</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Rehabilitacija</span>
+        <h2>Postoperativna rehabilitacija</h2>
+        <p>Stručno vođenje oporavka nakon ortopedskih i neuroloških operacija. Program se prilagođava vrsti operacije, dobi pacijenta i ciljevima oporavka.</p>
+        <p>Rehabilitacija obuhvaća oporavak nakon operacija koljena (TEP, ACL rekonstrukcija), ramena (rotator cuff), kuka (TEP), kralježnice i stopala.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Koordinacija s operaterom i ortopedom</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Postupno vraćanje funkcije i snage</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Smanjenje rizika komplikacija</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Praćenje napretka u svakoj fazi</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+    <!-- 5. DNS -->
+    <div class="service-full reveal" id="dns">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span style="font-size:.68rem;opacity:.55">DNS vježbe stabilizacije</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Neurologija</span>
+        <h2>DNS — Dynamic Neuromuscular Stabilization</h2>
+        <p>DNS je dijagnostički i terapijski pristup razvijen na Praškoj školi rehabilitacije koji se temelji na razvojnoj neurologiji. Aktivira duboke stabilizatore trupa i obnavlja prirodne obrasce pokreta.</p>
+        <p>Posebno je učinkovit za kronične bolove u leđima, nestabilnost zglobova, skoliozu, sportske disfunkcije i neurološke tegobe.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Trajna korekcija disfunkcija pokreta</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Aktivacija dubokih stabilizatora</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Učinkovito za kronične bolove u leđima</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Praška škola — međunarodna metoda</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+    <!-- 6. Kinesio Taping -->
+    <div class="service-full reverse reveal" id="kinesio-taping">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span style="font-size:.68rem;opacity:.55">kinesio taping aplikacija</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Prevencija</span>
+        <h2>Kinesio Taping</h2>
+        <p>Kinesio Taping je metoda primjene elastičnih ljepljivih traka na kožu u svrhu potpore mišićima i zglobovima, smanjenja boli i poboljšanja propriocepcije.</p>
+        <p>Često se koristi kao nadopuna terapiji ili u sportskim aktivnostima za prevenciju ozljeda i podršku u procesu oporavka.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Smanjenje boli bez ograničenja pokreta</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Potpora sportskim aktivnostima</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Vodootporno — traje 3–5 dana</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Certificirana KTA metoda</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+    <!-- 7. Funkcionalni trening -->
+    <div class="service-full reveal" id="funkcionalni-trening">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><path d="M6 5v14M18 5v14M4 9h4M16 9h4M4 15h4M16 15h4"/></svg><span style="font-size:.68rem;opacity:.55">funkcionalni trening</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Trening</span>
+        <h2>Funkcionalni trening</h2>
+        <p>Vođeni fizioterapeutski trening koji poboljšava snagu, stabilnost i koordinaciju. Idealan kao nastavak terapije, ali i kao preventivni program za aktivne osobe.</p>
+        <p>Program se temelji na funkcionalnim pokretima svakodnevnog života i sporta, uz stalni nadzor fizioterapeuta.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Poboljšanje snage i stabilnosti</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Prevencija ozljeda</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Nadzor certificiranog fizioterapeuta</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Prilagodljivo svakoj razini fitnes</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+    <!-- 8. Bolovi u leđima, vratu, ramenima -->
+    <div class="service-full reverse reveal" id="bolovi">
+      <div class="service-full-img">
+        <div class="img-placeholder" style="height:100%;">
+          <div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 10px;opacity:.4"><path d="M12 2a5 5 0 0 1 5 5c0 2.5-1.5 4.5-3.5 5.5V20a1.5 1.5 0 0 1-3 0v-7.5C8.5 11.5 7 9.5 7 7a5 5 0 0 1 5-5z"/></svg><span style="font-size:.68rem;opacity:.55">terapija boli u leđima</span></div>
+        </div>
+      </div>
+      <div class="service-full-body">
+        <span class="service-tag">Bolovi</span>
+        <h2>Bolovi u leđima, vratu i ramenima</h2>
+        <p>Specijalizirana terapija kroničnih i akutnih bolova u leđima, vratu, ramenima i koljenima — jedne od najčešćih tegoba modernog čovjeka.</p>
+        <p>Koristimo kombinirani pristup: manualna terapija, Tecar, DNS vježbe i terapeutske vježbe za dugotrajno rješavanje uzroka boli, ne samo simptoma.</p>
+        <div class="service-benefits">
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Tretman uzroka, ne samo simptoma</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Kombinirani višemetodski pristup</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brzo olakšanje od prvih tretmana</span></div>
+          <div class="service-benefit"><div class="service-benefit-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>Dugoročne strategije prevencije</span></div>
+        </div>
+        <a href="kontakt.html" class="btn btn-primary">Zakaži tretman</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────── -->
+<section class="section bg-subtle">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="section-label" style="color:rgba(255,255,255,.75); justify-content:center;">Nije sigurni koja usluga?</div>
+      <h2>Javite nam se — savjetovat ćemo vas</h2>
+      <p>Besplatna konzultacija telefonom ili poruka putem kontakt forme.</p>
+      <div class="btn-group">
+        <a href="kontakt.html" class="btn btn-white btn-lg">Zakaži termin</a>
+        <a href="tel:0959045385" class="btn btn-lg" style="background:rgba(255,255,255,.15); color:white; border:2px solid rgba(255,255,255,.4);">095 904 5385</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="nav.js"></script>
+</body>
+</html>

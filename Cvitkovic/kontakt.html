@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Fizio Cvitković | Fizioterapija Split</title>
+  <meta name="description" content="Zakažite termin u ordinaciji Fizio Cvitković u Splitu. Dubrovačka ul. 59, tel: 095 904 5385. Radno vrijeme: pon–pet 8:30–20:00.">
+  <link rel="canonical" href="https://fiziocvitkovic.hr/kontakt">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main>
+
+<!-- ── PAGE HERO ──────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Navigacijska putanja">
+      <a href="index.html">Početna</a>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>Kontakt</span>
+    </nav>
+    <div class="section-label">Stupite u kontakt</div>
+    <h1>Zakažite <span class="text-primary">termin</span></h1>
+    <p class="lead">Ispunite obrazac ili nas nazovite — odgovaramo u roku od 24 sata i zajedno ćemo pronaći termin koji vam odgovara.</p>
+  </div>
+</section>
+
+<!-- ── CONTACT GRID ───────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- FORM -->
+      <div class="reveal">
+        <div class="section-label" style="margin-bottom:24px;">Pošaljite poruku</div>
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/XXXXXXXX"
+          method="POST"
+          novalidate
+        >
+          <!-- Formspree honeypot spam filter -->
+          <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_subject" value="Nova poruka s web stranice – Fizio Cvitković">
+          <input type="hidden" name="_replyto" id="replyToField">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ime">Ime i prezime <span class="req">*</span></label>
+              <input
+                type="text"
+                id="ime"
+                name="ime"
+                class="form-control"
+                placeholder="npr. Marko Marković"
+                required
+                autocomplete="name"
+              >
+            </div>
+            <div class="form-group">
+              <label for="telefon">Telefon <span class="req">*</span></label>
+              <input
+                type="tel"
+                id="telefon"
+                name="telefon"
+                class="form-control"
+                placeholder="npr. 095 123 4567"
+                required
+                autocomplete="tel"
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail adresa <span class="req">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="vaša@email.com"
+              required
+              autocomplete="email"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="usluga">Koja vas usluga zanima?</label>
+            <select id="usluga" name="usluga" class="form-control">
+              <option value="">— Odaberite uslugu (opcionalno) —</option>
+              <option value="Manualna terapija">Manualna terapija</option>
+              <option value="Tecar terapija (Wintecare)">Tecar terapija (Wintecare)</option>
+              <option value="Liječenje sportskih ozljeda">Liječenje sportskih ozljeda</option>
+              <option value="Postoperativna rehabilitacija">Postoperativna rehabilitacija</option>
+              <option value="DNS metoda">DNS — Dynamic Neuromuscular Stabilization</option>
+              <option value="Kinesio Taping">Kinesio Taping</option>
+              <option value="Funkcionalni trening">Funkcionalni trening</option>
+              <option value="Bolovi u leđima / vratu / ramenima">Bolovi u leđima / vratu / ramenima</option>
+              <option value="Nisam siguran/na">Nisam siguran/na — trebam savjet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="poruka">Poruka <span class="req">*</span></label>
+            <textarea
+              id="poruka"
+              name="poruka"
+              class="form-control"
+              placeholder="Opišite vaše tegobe, kada bi vam odgovaralo doći na pregled i sve ostalo što smatrate važnim..."
+              required
+            ></textarea>
+          </div>
+
+          <p style="font-size:.8rem; color:var(--text-muted); margin-bottom:16px; line-height:1.6;">
+            Slanjem obrasca suglasni ste s obradom osobnih podataka u svrhu odgovaranja na vaš upit. Podaci se ne dijele s trećim stranama.
+          </p>
+
+          <button type="submit" class="btn btn-primary btn-lg form-submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Pošalji poruku
+          </button>
+
+          <div class="form-success" id="formSuccess" role="alert">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:8px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Hvala! Vaša poruka je uspješno poslana. Javit ćemo vam se u roku od 24 sata.
+          </div>
+          <div class="form-success" id="formError" style="background:oklch(0.97 0.03 20); border-color:#ef4444; color:#b91c1c;" role="alert">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:8px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Došlo je do greške. Molimo nazovite nas na <strong>095 904 5385</strong> ili pišite direktno na <strong>toncicvitkovic@gmail.com</strong>.
+          </div>
+        </form>
+      </div>
+
+      <!-- INFO SIDEBAR -->
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="section-label" style="margin-bottom:24px;">Informacije</div>
+
+        <div class="card info-card">
+          <div class="info-row">
+            <div class="info-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Adresa</strong>
+              <p>Dubrovačka ul. 59<br>21000 Split, Hrvatska</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.92 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.84 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Telefon</strong>
+              <p><a href="tel:0959045385" style="color:var(--primary); font-weight:600;">095 904 5385</a></p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>E-mail</strong>
+              <p><a href="mailto:toncicvitkovic@gmail.com" style="color:var(--primary);">toncicvitkovic@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-row-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong>Radno vrijeme</strong>
+              <div class="hours-grid" style="margin-top:8px;">
+                <span class="hours-day">Ponedjeljak</span><span class="hours-time">8:30 – 20:00</span>
+                <span class="hours-day">Utorak</span><span class="hours-time">8:30 – 20:00</span>
+                <span class="hours-day">Srijeda</span><span class="hours-time">8:30 – 20:00</span>
+                <span class="hours-day">Četvrtak</span><span class="hours-time">8:30 – 20:00</span>
+                <span class="hours-day">Petak</span><span class="hours-time">8:30 – 20:00</span>
+                <span class="hours-day">Subota</span><span class="hours-closed">Zatvoreno</span>
+                <span class="hours-day">Nedjelja</span><span class="hours-closed">Zatvoreno</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick call CTA -->
+        <a href="tel:0959045385" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:12px; margin-top:4px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.92 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.84 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Nazovite odmah
+        </a>
+
+        <!-- Google Maps embed -->
+        <div class="map-embed">
+          <iframe
+            title="Lokacija ordinacije Fizio Cvitković, Dubrovačka ul. 59, Split"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.8!2d16.4402!3d43.5081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMwJzI5LjIiTiAxNsKwMjYnMjQuNyJF!5e0!3m2!1shr!2shr!4v1"
+            width="100%"
+            height="280"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <p style="font-size:.78rem; color:var(--text-muted); margin-top:8px; text-align:center;">
+          <a href="https://maps.google.com/?q=Dubrovačka+ul.+59,+21000+Split" target="_blank" rel="noopener" style="color:var(--primary);">Otvori u Google Maps</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="nav.js"></script>
+<script>
+(function () {
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  const error = document.getElementById('formError');
+  const emailField = document.getElementById('email');
+  const replyTo = document.getElementById('replyToField');
+
+  // Keep hidden reply-to in sync
+  emailField.addEventListener('input', function () {
+    replyTo.value = this.value;
+  });
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Basic validation
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(function (field) {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#ef4444';
+        valid = false;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+    if (!valid) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation:spin .8s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Šaljem...';
+
+    const style = document.createElement('style');
+    style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+    document.head.appendChild(style);
+
+    try {
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        success.style.display = 'block';
+        error.style.display = 'none';
+        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      error.style.display = 'block';
+      success.style.display = 'none';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
+  });
+
+  // Remove red border on input
+  form.querySelectorAll('.form-control').forEach(function (field) {
+    field.addEventListener('input', function () {
+      this.style.borderColor = '';
+    });
+  });
+})();
+</script>
+</body>
+</html>
