@@ -2,9 +2,16 @@
   "name": "cvitkovic",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
+    "hash-password": "node scripts/hash-admin-password.js",
     "build": "echo \"Static site: no build step required\"",
     "start": "node server.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "compression": "^1.8.1",
+    "express": "^5.2.1"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,165 @@
+body {
+  background: var(--bg-subtle);
+}
+
+.admin-shell {
+  min-height: 100vh;
+  padding: 48px 24px;
+}
+
+.login-panel {
+  max-width: 560px;
+  margin: 8vh auto 0;
+}
+
+.admin-panel {
+  padding: 28px;
+}
+
+.admin-note {
+  color: var(--text-muted);
+  margin: 14px 0 22px;
+}
+
+.admin-topbar {
+  max-width: 1160px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.admin-topbar h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.topbar-actions,
+.sidebar-actions,
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-grid {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.post-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  color: var(--text);
+  cursor: pointer;
+  padding: 12px;
+  text-align: left;
+}
+
+.post-row.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.post-row span {
+  font-weight: 700;
+}
+
+.post-row small {
+  color: inherit;
+  opacity: 0.76;
+}
+
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-form.single {
+  grid-template-columns: 1fr;
+}
+
+.admin-form label {
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.76rem;
+  font-weight: 700;
+  gap: 7px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  color: var(--text);
+  font: inherit;
+  letter-spacing: 0;
+  padding: 12px 14px;
+  text-transform: none;
+}
+
+.admin-form textarea {
+  min-height: 260px;
+  resize: vertical;
+}
+
+.admin-form .full,
+.actions {
+  grid-column: 1 / -1;
+}
+
+.btn-danger {
+  background: #b42318;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #8f1d15;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .admin-topbar,
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-shell {
+    padding: 28px 16px;
+  }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Fizio Cvitković</title>
+  <meta name="description" content="Blog objava ordinacije Fizio Cvitković.">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+<main>
+  <article class="post-page container" id="post" hidden>
+    <a href="/blog" class="back-link">Natrag na blog</a>
+    <div class="post-meta">
+      <span id="post-category"></span>
+      <span id="post-date"></span>
+      <span id="post-author"></span>
+    </div>
+    <h1 id="post-title"></h1>
+    <div class="post-image-wrap" id="post-image-wrap" hidden>
+      <img id="post-image" class="post-image" alt="">
+    </div>
+    <div class="tags" id="post-tags"></div>
+    <div class="post-content" id="post-content"></div>
+  </article>
+  <p class="container empty-state post-empty" id="post-empty" hidden>Objava nije pronađena.</p>
+</main>
+<script src="../nav.js"></script>
+<script src="post.js"></script>
+</body>
+</html>
