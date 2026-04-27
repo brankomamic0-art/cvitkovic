@@ -1,0 +1,12 @@
+{
+  "name": "cvitkovic",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"Static site: no build step required\"",
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
